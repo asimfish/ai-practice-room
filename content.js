@@ -9,7 +9,7 @@ import {advancedLessons,toolEntries,templateEntries} from './advanced.js';
 import {deepGroups,deepLessons,featureMap} from './deep-learning.js';
 import {workflowLessons} from './workflow-courses.js';
 import {anygentGroup,anygentLessons,anygentInvite} from './anygent.js';
-export const version = '10.0 · 2026-10-09';
+export const version = '11.0 · 2026-10-09';
 export {featureMap};
 export {anygentInvite};
 export const groups = [
