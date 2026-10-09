@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 710" role="img" aria-labelledby="title desc">
+<title id="title">从原创剧本到AI短剧与真实发布</title><desc id="desc">准备与适用手续、剧本、角色场景、动态小样、逐镜生成返工、声音与剪辑、完整审片、本人按条件发布。小样不合格先修改，未核对手续保持待确认。静态图配音只是预演。</desc>
+<defs><marker id="a" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10" fill="none" stroke="#1f7660" stroke-width="2"/></marker></defs>
+<rect width="1080" height="710" rx="24" fill="#f7f4ec"/>
+<g font-family="PingFang SC, Microsoft YaHei, sans-serif" fill="#183f36">
+<text x="48" y="64" font-size="30" font-weight="700">一部短剧，八步留下真实证据</text>
+<text x="48" y="98" font-size="18" fill="#566c65">先验证小样，再扩大；先看懂故事，再确认适用的发布条件</text>
+<g fill="white" stroke="#cadbd2" stroke-width="2"><rect x="48" y="142" width="218" height="146" rx="18"/><rect x="302" y="142" width="218" height="146" rx="18"/><rect x="556" y="142" width="218" height="146" rx="18"/><rect x="810" y="142" width="218" height="146" rx="18"/><rect x="48" y="348" width="218" height="146" rx="18"/><rect x="302" y="348" width="218" height="146" rx="18"/><rect x="556" y="348" width="218" height="146" rx="18"/><rect x="810" y="348" width="218" height="146" rx="18"/></g>
+<g font-size="22" font-weight="700"><text x="68" y="183">01 制作准备</text><text x="322" y="183">02 剧本试读</text><text x="576" y="183">03 人物与场景</text><text x="830" y="183">04 动态小样</text><text x="68" y="389">05 逐镜与返工</text><text x="322" y="389">06 声音与剪辑</text><text x="576" y="389">07 完整审片</text><text x="830" y="389">08 本人发布</text></g>
+<g font-size="17" fill="#566c65"><text x="68" y="220">范围、预算、停止线</text><text x="68" y="250">制作前核适用手续</text><text x="322" y="220">目标、阻碍、改变</text><text x="322" y="250">真实试读，不猜时长</text><text x="576" y="220">固定脸、衣服、站位</text><text x="576" y="250">母图是静态参考</text><text x="830" y="220">先4–6秒单角色</text><text x="830" y="250">当前支持时长另核</text><text x="68" y="426">主镜＋反应／插镜</text><text x="68" y="456">失败有记录，超限停</text><text x="322" y="426">真口播、可信口型</text><text x="322" y="456">字幕按最终声音校准</text><text x="576" y="426">盲看复述＋手机播放</text><text x="576" y="456">动态叙事与来源核查</text><text x="830" y="426">类别、资格、标识</text><text x="830" y="456">审核＋真实抖音链接</text></g>
+<g stroke="#1f7660" stroke-width="3" fill="none" marker-end="url(#a)"><path d="M270 215H294"/><path d="M524 215H548"/><path d="M778 215H802"/><path d="M919 296V318H157V340"/><path d="M270 421H294"/><path d="M524 421H548"/><path d="M778 421H802"/></g>
+<rect x="48" y="532" width="980" height="126" rx="18" fill="#e3eee6"/>
+<text x="72" y="569" font-size="22" font-weight="700">制作能力 ≠ 发布条件 ≠ 实际上线</text>
+<text x="72" y="605" font-size="18">静态配音只预演；毕业需实际AI主要动态画面与至少一集自写新冲突成片。</text>
+<text x="72" y="634" font-size="18">质量不合格先返工；手续未知待确认；审核中保留真实状态，不编上线结果。</text>
+</g></svg>

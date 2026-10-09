@@ -1,0 +1,4 @@
+id,input_file,output_file,status,unknowns,checks
+H01,v6-tools-harness-input.md#H01,output-v1/H01-任务单.docx,待生成,实际学生识词情况,尚未运行结构/打开/编辑/内容检查
+H02,v6-tools-harness-input.md#H02,output-v1/H02-任务单.docx,待生成,学员是否理解代词对应的人,尚未运行结构/打开/编辑/内容检查
+H03,v6-tools-harness-input.md#H03,output-v1/H03-任务单.docx,待生成,举办日期；房间,尚未运行结构/打开/编辑/内容检查

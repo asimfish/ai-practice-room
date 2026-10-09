@@ -1,0 +1,7 @@
+field,value,meaning
+input_price_per_million,2,每百万输入token虚构示例价人民币元；不是任何产品价目
+output_price_per_million,4,每百万输出token虚构示例价人民币元；不是任何产品价目
+input_tokens,1000,一次输入规模示例
+output_tokens,500,一次输出规模示例
+attempts,3,最多3次且失败也计入
+other_cost,0,本次教学假设无其他费用；真实未知费用不能填0

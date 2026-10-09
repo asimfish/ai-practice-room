@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1080" height="1920" viewBox="0 0 1080 1920" role="img" aria-labelledby="title desc">
+<title id="title">原创无文字窗户与双人物场景</title>
+<desc id="desc">奶油色背景、同一扇深蓝框窗、两个青绿色上衣的简化人物。画面没有可见文字，留空区域供剪辑器后加英语、I与you标签。SVG是静态练习素材，不保证生成工具可直接接收。</desc>
+<rect width="1080" height="1920" fill="#FFF7ED"/>
+<ellipse cx="540" cy="1150" rx="460" ry="35" fill="#E8E3DA"/>
+<rect x="334" y="350" width="412" height="420" rx="22" fill="#DDF2EB" stroke="#183153" stroke-width="9"/>
+<rect x="357" y="373" width="366" height="374" fill="#DFF2FB"/>
+<path d="M540 373V747M357 560H723" fill="none" stroke="#183153" stroke-width="9"/>
+<path d="M574 373L697 397V724L574 747Z" fill="#E9F8FC" stroke="#0F766E" stroke-width="8"/>
+<path d="M394 480L476 408M402 504L494 423" fill="none" stroke="#FFFFFF" stroke-width="14" stroke-linecap="round" opacity=".75"/>
+<circle cx="217" cy="754" r="60" fill="#F7D4B8" stroke="#183153" stroke-width="7"/>
+<path d="M155 840Q217 810 280 840L297 1020H138Z" fill="#0F766E"/>
+<path d="M165 881L103 947M270 881L328 828M180 1020L169 1135M256 1020L269 1135" fill="none" stroke="#183153" stroke-width="13" stroke-linecap="round"/>
+<circle cx="861" cy="754" r="60" fill="#F7D4B8" stroke="#183153" stroke-width="7"/>
+<path d="M799 840Q861 810 924 840L941 1020H782Z" fill="#0F766E"/>
+<path d="M809 881L751 828M914 881L976 947M825 1020L813 1135M900 1020L912 1135" fill="none" stroke="#183153" stroke-width="13" stroke-linecap="round"/>
+<circle cx="198" cy="746" r="5" fill="#183153"/>
+<circle cx="235" cy="746" r="5" fill="#183153"/>
+<path d="M201 778Q217 791 233 778" fill="none" stroke="#183153" stroke-width="5" stroke-linecap="round"/>
+<circle cx="842" cy="746" r="5" fill="#183153"/>
+<circle cx="879" cy="746" r="5" fill="#183153"/>
+<path d="M845 778Q861 791 877 778" fill="none" stroke="#183153" stroke-width="5" stroke-linecap="round"/>
+</svg>
+

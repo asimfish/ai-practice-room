@@ -1,0 +1,40 @@
+1
+00:00:00,500 --> 00:00:03,400
+Can I, or can you?
+用 Can I，还是 Can you？
+
+2
+00:00:03,600 --> 00:00:06,700
+Can I open the window?
+我可以开窗吗？
+
+3
+00:00:06,900 --> 00:00:10,000
+I am asking for permission.
+我在请求许可。
+
+4
+00:00:10,200 --> 00:00:13,400
+Can you open the window?
+你可以帮忙开窗吗？
+
+5
+00:00:13,600 --> 00:00:17,000
+I am asking you to help.
+我在请你帮忙。
+
+6
+00:00:17,200 --> 00:00:21,000
+Look at who does the action.
+先看是谁做动作。
+
+7
+00:00:21,200 --> 00:00:24,700
+Your turn. May I sit here?
+轮到你了：我可以坐这里吗？
+
+8
+00:00:24,900 --> 00:00:29,600
+Say: Can I sit here?
+可以说：Can I sit here?
+

@@ -1,0 +1,5 @@
+"scenario_id","state","unit","limit","spent","reserved","next_estimate","estimate_unit","attempts","max_attempts","learner_decision"
+"SIM-A","SIMULATED","练习单位","40","8","6","7","练习单位","1","2","待学员判断"
+"SIM-B","SIMULATED","练习单位","40","38","0","4","练习单位","1","2","待学员判断"
+"SIM-C","SIMULATED","练习单位","40","8","0","5","练习单位","2","2","待学员判断"
+"SIM-D","SIMULATED","练习单位","40","8","0","","练习单位","1","2","待学员判断"
