@@ -1,10 +1,11 @@
-import {dramaCoreResources} from './drama-core-v8.js?v=14.0.0';
-import {generationResources} from './drama-generation-v8.js?v=14.0.0';
-import {releaseResources} from './drama-release-v8.js?v=14.0.0';
-import {officeWorkshopResources} from './workshops-office-v6.js?v=14.0.0';
-import {videoWorkshopResources} from './workshops-video-v6.js?v=14.0.0';
-import {toolsWorkshopResources} from './workshops-tools-v6.js?v=14.0.0';
-import {projectReadingResources} from './project-reading-v6.js?v=14.0.0';
+import {additionalResources,resourceUpdates} from './source-library-v15.js?v=15.0.0';
+import {dramaCoreResources} from './drama-core-v8.js?v=15.0.0';
+import {generationResources} from './drama-generation-v8.js?v=15.0.0';
+import {releaseResources} from './drama-release-v8.js?v=15.0.0';
+import {officeWorkshopResources} from './workshops-office-v6.js?v=15.0.0';
+import {videoWorkshopResources} from './workshops-video-v6.js?v=15.0.0';
+import {toolsWorkshopResources} from './workshops-tools-v6.js?v=15.0.0';
+import {projectReadingResources} from './project-reading-v6.js?v=15.0.0';
 const baseLearningResources = [
   {
     "id": "ref-1",
@@ -1510,4 +1511,4 @@ baseLearningResources.push(...[
 for(const r of baseLearningResources){if(r.author==='CapCut'){r.prerequisite='这是国际CapCut教程，按自己的端和地区核对，不能照抄为国内剪映按钮或套餐。'+r.prerequisite;}if(r.url.includes('template-helloworld'))r.prerequisite+=' 这是专用许可的源码公开项目，使用前读当前LICENSE，不能假定无限制商用。';}
 
 const seenResourceURLs=new Set();
-export const learningResources=[...baseLearningResources,...officeWorkshopResources,...videoWorkshopResources,...toolsWorkshopResources,...projectReadingResources,...dramaCoreResources,...generationResources,...releaseResources].filter(r=>{const key=new URL(r.url).href;if(seenResourceURLs.has(key))return false;seenResourceURLs.add(key);return true;});
+export const learningResources=[...baseLearningResources,...officeWorkshopResources,...videoWorkshopResources,...toolsWorkshopResources,...projectReadingResources,...dramaCoreResources,...generationResources,...releaseResources,...additionalResources].filter(r=>{const key=new URL(r.url).href;if(seenResourceURLs.has(key))return false;seenResourceURLs.add(key);return true;}).map(r=>resourceUpdates[r.id]?{...r,...resourceUpdates[r.id],id:r.id}:r);

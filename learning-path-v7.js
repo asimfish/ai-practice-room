@@ -1,5 +1,5 @@
-import {toolStartStages} from './tool-start-v12.js?v=14.0.0';
-import {dramaPathIds,dramaCheckpoint} from './drama-core-v8.js?v=14.0.0';
+import {toolStartStages} from './tool-start-v12.js?v=15.0.0';
+import {dramaPathIds,dramaCheckpoint} from './drama-core-v8.js?v=15.0.0';
 export const coreLessonIds=['first-task','human-ai-role','better-questions','files-check','ai-judgement','task-contract','quality-loop','automation-inventory','automation-cost'];
 const path=(id,title,lessonIds,description,kind='专题',caseIds=[])=>({id,title,lessonIds,description,kind,caseIds});
 export const learningPaths=[

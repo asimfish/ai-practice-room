@@ -1,5 +1,5 @@
-import {catalogSnapshots} from './catalog-snapshot.js?v=14.0.0';
-import {communitySources} from './skill-resources.js?v=14.0.0';
+import {catalogSnapshots} from './catalog-snapshot.js?v=15.0.0';
+import {communitySources} from './skill-resources.js?v=15.0.0';
 export const catalogEndpoints={plugins:{prefix:'plugins',api:'https://api.github.com/repos/openai/plugins/contents/plugins',repo:'https://github.com/openai/plugins',title:'当前官方插件目录',kind:'插件包'},legacy:{prefix:'skills/.curated',api:'https://api.github.com/repos/openai/skills/contents/skills/.curated',repo:'https://github.com/openai/skills',title:'旧精选 Skill 示例',kind:'历史 Skill'}};
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const hints=Object.assign(Object.create(null),{ 'google-drive':'办公 文档 云盘','canva':'PPT 演示 视觉','creative-production':'视频 创作','chatcut':'视频 剪辑','remotion':'视频 程序化','higgsfield':'视频 图像','hyperframes':'视频','data-analytics':'数据 分析','notion':'文档 笔记','superpowers':'开发 流程','openai-developers':'OpenAI 文档 学习','public-equity-investing':'金融 资料','pdf':'办公 文档 PDF','doc':'办公 文档','spreadsheet':'办公 表格','imagegen':'图片 创作','speech':'配音 声音','transcribe':'转写 字幕','playwright':'浏览器 自动化'});
