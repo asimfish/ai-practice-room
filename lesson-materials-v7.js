@@ -1,7 +1,7 @@
-import {dramaCoreMaterials,dramaAssets} from './drama-core-v8.js';
-import {generationMaterialsByLesson} from './drama-generation-v8.js';
-import {releaseMaterialsByLesson} from './drama-release-v8.js';
-import {practiceMaterialsByLesson} from './practice-repairs-v7.js';
+import {dramaCoreMaterials,dramaAssets} from './drama-core-v8.js?v=12.0.1';
+import {generationMaterialsByLesson} from './drama-generation-v8.js?v=12.0.1';
+import {releaseMaterialsByLesson} from './drama-release-v8.js?v=12.0.1';
+import {practiceMaterialsByLesson} from './practice-repairs-v7.js?v=12.0.1';
 const extra={
  'first-task':[{file:'v7-core-活动资料.txt',purpose:'可选共同材料；不用上传也可粘贴内容做第一份通知',role:'input'}],
  'files-check':[{file:'v7-core-活动资料.txt',purpose:'保存、重新打开，再上传或粘贴并核对三项事实',role:'input'}],
