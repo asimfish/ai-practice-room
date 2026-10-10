@@ -1,11 +1,11 @@
-import {additionalResources,resourceUpdates} from './source-library-v15.js?v=15.0.0';
-import {dramaCoreResources} from './drama-core-v8.js?v=15.0.0';
-import {generationResources} from './drama-generation-v8.js?v=15.0.0';
-import {releaseResources} from './drama-release-v8.js?v=15.0.0';
-import {officeWorkshopResources} from './workshops-office-v6.js?v=15.0.0';
-import {videoWorkshopResources} from './workshops-video-v6.js?v=15.0.0';
-import {toolsWorkshopResources} from './workshops-tools-v6.js?v=15.0.0';
-import {projectReadingResources} from './project-reading-v6.js?v=15.0.0';
+import {additionalResources,resourceUpdates} from './source-library-v15.js?v=15.0.1';
+import {dramaCoreResources} from './drama-core-v8.js?v=15.0.1';
+import {generationResources} from './drama-generation-v8.js?v=15.0.1';
+import {releaseResources} from './drama-release-v8.js?v=15.0.1';
+import {officeWorkshopResources} from './workshops-office-v6.js?v=15.0.1';
+import {videoWorkshopResources} from './workshops-video-v6.js?v=15.0.1';
+import {toolsWorkshopResources} from './workshops-tools-v6.js?v=15.0.1';
+import {projectReadingResources} from './project-reading-v6.js?v=15.0.1';
 const baseLearningResources = [
   {
     "id": "ref-1",

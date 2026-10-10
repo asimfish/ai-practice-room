@@ -1,7 +1,7 @@
-import {learningResources} from './reference-data.js?v=15.0.0';
-import {lessonStudyMap,toolStudyMap,projectStudyMap,groupStudyMap,studyContextNotes} from './source-library-v15.js?v=15.0.0';
-import {lessonInlineReferences,groupInlineReferences} from './inline-reference-map-v10.js?v=15.0.0';
-import {resourceCard} from './resource-card-v15.js?v=15.0.0';
+import {learningResources} from './reference-data.js?v=15.0.1';
+import {lessonStudyMap,toolStudyMap,projectStudyMap,groupStudyMap,studyContextNotes} from './source-library-v15.js?v=15.0.1';
+import {lessonInlineReferences,groupInlineReferences} from './inline-reference-map-v10.js?v=15.0.1';
+import {resourceCard} from './resource-card-v15.js?v=15.0.1';
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const fromIds=ids=>[...new Set(ids)].map(id=>learningResources.find(r=>r.id===id)).filter(Boolean);

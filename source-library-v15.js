@@ -2177,6 +2177,11 @@ export const groupStudyMap={
     "ref-50"
   ],
   "english": [
+    "v15-office-bc-plan",
+    "v15-office-bc-plan-videos",
+    "v15-office-anthropic-docx",
+    "v15-office-bc-materials-videos",
+    "v15-office-cambridge-loa",
     "ref-1",
     "ref-3",
     "office-v6-ref-dale-handout",
@@ -2185,12 +2190,23 @@ export const groupStudyMap={
     "ref-7"
   ],
   "ppt": [
+    "v15-office-ppt-generate",
+    "v15-office-ms-edit-video",
+    "v15-office-ppt-readme",
+    "v15-office-ppt-preview",
+    "v15-office-ms-template",
+    "v15-office-ms-rehearse",
     "ref-8",
     "ref-9",
     "office-v6-ref-template-guide",
     "ref-14"
   ],
   "video": [
+    "v15-video-shot-list",
+    "v15-video-shot-list-course",
+    "v15-video-remotion-skills",
+    "v15-video-screenwriting-course",
+    "v15-video-comfy-mcp-guide",
     "ref-51",
     "ref-53",
     "v8-story-elements",
