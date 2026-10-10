@@ -1,10 +1,10 @@
-import {dramaCoreResources} from './drama-core-v8.js?v=12.0.1';
-import {generationResources} from './drama-generation-v8.js?v=12.0.1';
-import {releaseResources} from './drama-release-v8.js?v=12.0.1';
-import {officeWorkshopResources} from './workshops-office-v6.js?v=12.0.1';
-import {videoWorkshopResources} from './workshops-video-v6.js?v=12.0.1';
-import {toolsWorkshopResources} from './workshops-tools-v6.js?v=12.0.1';
-import {projectReadingResources} from './project-reading-v6.js?v=12.0.1';
+import {dramaCoreResources} from './drama-core-v8.js?v=13.0';
+import {generationResources} from './drama-generation-v8.js?v=13.0';
+import {releaseResources} from './drama-release-v8.js?v=13.0';
+import {officeWorkshopResources} from './workshops-office-v6.js?v=13.0';
+import {videoWorkshopResources} from './workshops-video-v6.js?v=13.0';
+import {toolsWorkshopResources} from './workshops-tools-v6.js?v=13.0';
+import {projectReadingResources} from './project-reading-v6.js?v=13.0';
 const baseLearningResources = [
   {
     "id": "ref-1",
@@ -1416,7 +1416,7 @@ baseLearningResources.push(...[
     "author": "官方或原项目维护者",
     "whatToLearn": "学习doc-coauthoring、文档/PPT/表格、internal-comms等任务如何组织说明和资源。",
     "prerequisite": "Claude工具名与Codex环境不同，文档类技能的单项许可要阅读。",
-    "practiceAfter": "挑一个说明型技能，在练习目录核对依赖后做小范围试做。",
+    "practiceAfter": "挑一个说明型技能，在练习目录核对依赖后做小范围测试。",
     "checkedAt": "2026-10-09",
     "verificationNote": "此前同日已打开原README/使用说明；未安装或逐项验证所有外链。"
   },
@@ -1501,7 +1501,7 @@ baseLearningResources.push(...[
     "author": "官方或原项目维护者",
     "whatToLearn": "按任务关键词发现候选，学习热度信息与质量验证的区别。",
     "prerequisite": "安装量不能保证适配或质量，具体安装回原作者仓库。",
-    "practiceAfter": "搜索presentation或video，记录原链接与一个验收小范围试做。",
+    "practiceAfter": "搜索presentation或video，记录原链接与一个验收小范围测试。",
     "checkedAt": "2026-10-09",
     "verificationNote": "此前同日已打开原README/使用说明；未安装或逐项验证所有外链。"
   }

@@ -1,9 +1,9 @@
-import {ownVisualsByLesson} from './visual-own-v9.js?v=12.0.1';
-import {anygentVisualsByLesson} from './visual-anygent-v9.js?v=12.0.1';
-import {toolVisualsByLesson} from './visual-tools-v9.js?v=12.0.1';
-import {videoVisualsByLesson} from './visual-video-v9.js?v=12.0.1';
-import {chatgptVisualsByLesson} from './visual-chatgpt-v9.js?v=12.0.1';
-import {anygentLocalVisualsByLesson,anygentVisualLimits} from './visual-anygent-local-v9.js?v=12.0.1';
+import {ownVisualsByLesson} from './visual-own-v9.js?v=13.0';
+import {anygentVisualsByLesson} from './visual-anygent-v9.js?v=13.0';
+import {toolVisualsByLesson} from './visual-tools-v9.js?v=13.0';
+import {videoVisualsByLesson} from './visual-video-v9.js?v=13.0';
+import {chatgptVisualsByLesson} from './visual-chatgpt-v9.js?v=13.0';
+import {anygentLocalVisualsByLesson,anygentVisualLimits} from './visual-anygent-local-v9.js?v=13.0';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const visualMediaByLesson={};
 export const mediaGapsByLesson={};

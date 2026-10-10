@@ -1,12 +1,12 @@
-import {dramaCases} from './drama-cases-v8.js?v=12.0.1';
-import {dramaAssets} from './drama-core-v8.js?v=12.0.1';
-import {applyPracticeRepairs,repairCases} from './practice-repairs-v7.js?v=12.0.1';
-import {officeWorkshops} from './workshops-office-v6.js?v=12.0.1';
-import {videoWorkshops} from './workshops-video-v6.js?v=12.0.1';
-import {toolsWorkshops} from './workshops-tools-v6.js?v=12.0.1';
-import {officeCases} from './office-cases.js?v=12.0.1';
-import {videoCases} from './video-cases.js?v=12.0.1';
-import {learningResources} from './reference-data.js?v=12.0.1';
+import {dramaCases} from './drama-cases-v8.js?v=13.0';
+import {dramaAssets} from './drama-core-v8.js?v=13.0';
+import {applyPracticeRepairs,repairCases} from './practice-repairs-v7.js?v=13.0';
+import {officeWorkshops} from './workshops-office-v6.js?v=13.0';
+import {videoWorkshops} from './workshops-video-v6.js?v=13.0';
+import {toolsWorkshops} from './workshops-tools-v6.js?v=13.0';
+import {officeCases} from './office-cases.js?v=13.0';
+import {videoCases} from './video-cases.js?v=13.0';
+import {learningResources} from './reference-data.js?v=13.0';
 const src=topic=>learningResources.filter(r=>r.topics.includes(topic)&&r.type!=='video').slice(0,3).map(r=>({title:r.title,url:r.url}));
 const make=(id,topic,title,input,prompt,sampleOutput,walkthrough,acceptance,extra={})=>({id,topic,title,input,prompt,sampleOutput,walkthrough,acceptance,basis:'课程编辑的原创练习，方法参考对应官方指南。',sources:src(topic),executionStatus:'示范内容由课程编辑编写；所用工具的生成、导出与账号条件需你实际运行验收。',...extra});
 const originalPracticeCases=[...officeCases,...videoCases,
@@ -37,7 +37,7 @@ make('case-pencil-motion','video','图生视频：用一张参考图练一个镜
  ['能解释图片生成和视频生成分别完成什么。','参考图有来源，单次扣费已查看。','采用的镜头有检查记录，未把失败当可用。'],{figure:'video-flow',photo:'pencil-reference.png',downloads:['../visuals/pencil-reference.png']}),
 make('case-feishu-draft','automation','飞书日报：记录、草稿、人审与推送','用本站虚构日志R01–R04。R01–R03是2026-10-09且可分享测试组；R04日期更早且仅自己可见。',
  '只根据2026-10-09且可分享测试组的记录生成日报草稿。完成和进行中分开，每项带记录编号。缺失信息标待确认，不补负责人，不发送。再列人工审核项。',
- '完成：R01词卡12张初稿（仍有例句待核查）。\n进行中：R02 PPT大纲已审，3页测试稿未完成；R03口播和分镜已准备，画面未生成。\n阻碍：例句、模板字体与素材。\n下一步：按记录继续核查和做小范围试做。R04不进入本日日报。',
+ '完成：R01词卡12张初稿（仍有例句待核查）。\n进行中：R02 PPT大纲已审，3页测试稿未完成；R03口播和分镜已准备，画面未生成。\n阻碍：例句、模板字体与素材。\n下一步：按记录继续核查和做小范围测试。R04不进入本日日报。',
  ['先手填有日期、范围和证据的记录，不让机器人猜工作信息。','选择当日与授权范围，先输出带编号的草稿。','人工核对“初稿/计划”是否误写成“完成”，逐项回记录。','需要推送时另外确认群、身份、权限和已审核状态，先按钮测试。','稳定后才考虑定时；当日无记录或日期不符停止。','保留稳定日报ID和每次运行ID，状态未知时先查实际发送，不立即重跑。'],
  ['只用当日且允许分享的记录。','完成、进行中与未知项正确。','未经审核和授权不发送，能停用并检查日志。'],{figure:'report-flow',downloads:['飞书日报练习材料.md'],sources:[{title:'飞书工作流',url:'https://www.feishu.cn/hc/zh-CN/articles/170735237222'},{title:'发送身份与权限',url:'https://www.feishu.cn/hc/zh-CN/articles/986962389649'}]}),
 make('case-finance-reading','automation','金融资料：先复算预算，再读公开财报','使用本站6笔虚构预算，统一人民币。公开财报只选择原文中的三个指标，不涉及账户操作。',

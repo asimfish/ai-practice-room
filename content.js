@@ -1,16 +1,17 @@
-import {toolStartLessons} from './tool-start-v12.js?v=12.0.1';
-import {dramaCoreLessons} from './drama-core-v8.js?v=12.0.1';
-import {generationLessons,generationTools} from './drama-generation-v8.js?v=12.0.1';
-import {releaseLessons} from './drama-release-v8.js?v=12.0.1';
-import {lessonQualityById} from './lesson-quality-v7.js?v=12.0.1';
-import {sourceLessonPatches,sourceToolPatches,sourceFeaturePatches} from './source-repairs-v7.js?v=12.0.1';
-import {practiceLessonPatches} from './practice-repairs-v7.js?v=12.0.1';
-import {catalogLessons} from './skill-resources.js?v=12.0.1';
-import {advancedLessons,toolEntries,templateEntries} from './advanced.js?v=12.0.1';
-import {deepGroups,deepLessons,featureMap} from './deep-learning.js?v=12.0.1';
-import {workflowLessons} from './workflow-courses.js?v=12.0.1';
-import {anygentGroup,anygentLessons,anygentInvite} from './anygent.js?v=12.0.1';
-export const version = '12.0.1 · 2026-10-10';
+import {applyFinalLessonPolish} from './lesson-polish-v13.js?v=13.0';
+import {toolStartLessons} from './tool-start-v12.js?v=13.0';
+import {dramaCoreLessons} from './drama-core-v8.js?v=13.0';
+import {generationLessons,generationTools} from './drama-generation-v8.js?v=13.0';
+import {releaseLessons} from './drama-release-v8.js?v=13.0';
+import {lessonQualityById} from './lesson-quality-v7.js?v=13.0';
+import {sourceLessonPatches,sourceToolPatches,sourceFeaturePatches} from './source-repairs-v7.js?v=13.0';
+import {practiceLessonPatches} from './practice-repairs-v7.js?v=13.0';
+import {catalogLessons} from './skill-resources.js?v=13.0';
+import {advancedLessons,toolEntries,templateEntries} from './advanced.js?v=13.0';
+import {deepGroups,deepLessons,featureMap} from './deep-learning.js?v=13.0';
+import {workflowLessons} from './workflow-courses.js?v=13.0';
+import {anygentGroup,anygentLessons,anygentInvite} from './anygent.js?v=13.0';
+export const version = '13.0 · 2026-10-10';
 export {featureMap};
 export {anygentInvite};
 export const groups = [
@@ -137,3 +138,5 @@ groups.find(g=>g.id==='skills').tag='工具入门';
 for(const l of toolStartLessons)l.sourcesReviewed='2026-10-10';
 tools.push({title:'Kimi Code CLI',symbol:'K',type:'电脑端命令行工具',desc:'在练习目录读取材料、生成文件，并按当前 Kimi Code 说明发现与调用 Skill。',use:'先用同一份活动材料完成一个可检查的文件任务',limit:'Windows 按当前官方说明准备 Git for Windows / Git Bash；安装、会员权益和开放平台 API 费用分别核对。',url:'https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started',lesson:'kimi-code-cli-start'});
 tools.push({title:'Codex 桌面入口',symbol:'C',type:'电脑端任务与工作区',desc:'按当前官方桌面入口进入 Codex，选择自己的练习目录，明确调用 Skill 并检查真实输出文件。',use:'本地文件任务、Skill 练习与作品修改',limit:'当前下载产品与菜单名称以官方 Quickstart 为准；普通聊天和 Codex 工作区的能力与账号条件分别核对。',url:'https://learn.chatgpt.com/docs/quickstart',lesson:'codex-app-start'});
+
+applyFinalLessonPolish(lessons,templates);
