@@ -1,10 +1,10 @@
-import {dramaCoreResources} from './drama-core-v8.js?v=13.0.1';
-import {generationResources} from './drama-generation-v8.js?v=13.0.1';
-import {releaseResources} from './drama-release-v8.js?v=13.0.1';
-import {officeWorkshopResources} from './workshops-office-v6.js?v=13.0.1';
-import {videoWorkshopResources} from './workshops-video-v6.js?v=13.0.1';
-import {toolsWorkshopResources} from './workshops-tools-v6.js?v=13.0.1';
-import {projectReadingResources} from './project-reading-v6.js?v=13.0.1';
+import {dramaCoreResources} from './drama-core-v8.js?v=13.0.2';
+import {generationResources} from './drama-generation-v8.js?v=13.0.2';
+import {releaseResources} from './drama-release-v8.js?v=13.0.2';
+import {officeWorkshopResources} from './workshops-office-v6.js?v=13.0.2';
+import {videoWorkshopResources} from './workshops-video-v6.js?v=13.0.2';
+import {toolsWorkshopResources} from './workshops-tools-v6.js?v=13.0.2';
+import {projectReadingResources} from './project-reading-v6.js?v=13.0.2';
 const baseLearningResources = [
   {
     "id": "ref-1",

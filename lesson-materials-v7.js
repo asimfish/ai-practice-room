@@ -1,7 +1,7 @@
-import {dramaCoreMaterials,dramaAssets} from './drama-core-v8.js?v=13.0.1';
-import {generationMaterialsByLesson} from './drama-generation-v8.js?v=13.0.1';
-import {releaseMaterialsByLesson} from './drama-release-v8.js?v=13.0.1';
-import {practiceMaterialsByLesson} from './practice-repairs-v7.js?v=13.0.1';
+import {dramaCoreMaterials,dramaAssets} from './drama-core-v8.js?v=13.0.2';
+import {generationMaterialsByLesson} from './drama-generation-v8.js?v=13.0.2';
+import {releaseMaterialsByLesson} from './drama-release-v8.js?v=13.0.2';
+import {practiceMaterialsByLesson} from './practice-repairs-v7.js?v=13.0.2';
 const extra={
  'skill-codex-install':[{file:'v7-practice-notice.md',purpose:'文字资料核验型Skill的试用输入示例；PPT等生成型技能另选其适用材料',role:'input'},{file:'Skill探索记录.md',purpose:'记录已安装名称、试用输入、实际输出或失败与本人检查',role:'record'}],
  'first-task':[{file:'v7-core-活动资料.txt',purpose:'可选共同材料；不用上传也可粘贴内容做第一份通知',role:'input'}],

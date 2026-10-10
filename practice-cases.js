@@ -1,12 +1,12 @@
-import {dramaCases} from './drama-cases-v8.js?v=13.0.1';
-import {dramaAssets} from './drama-core-v8.js?v=13.0.1';
-import {applyPracticeRepairs,repairCases} from './practice-repairs-v7.js?v=13.0.1';
-import {officeWorkshops} from './workshops-office-v6.js?v=13.0.1';
-import {videoWorkshops} from './workshops-video-v6.js?v=13.0.1';
-import {toolsWorkshops} from './workshops-tools-v6.js?v=13.0.1';
-import {officeCases} from './office-cases.js?v=13.0.1';
-import {videoCases} from './video-cases.js?v=13.0.1';
-import {learningResources} from './reference-data.js?v=13.0.1';
+import {dramaCases} from './drama-cases-v8.js?v=13.0.2';
+import {dramaAssets} from './drama-core-v8.js?v=13.0.2';
+import {applyPracticeRepairs,repairCases} from './practice-repairs-v7.js?v=13.0.2';
+import {officeWorkshops} from './workshops-office-v6.js?v=13.0.2';
+import {videoWorkshops} from './workshops-video-v6.js?v=13.0.2';
+import {toolsWorkshops} from './workshops-tools-v6.js?v=13.0.2';
+import {officeCases} from './office-cases.js?v=13.0.2';
+import {videoCases} from './video-cases.js?v=13.0.2';
+import {learningResources} from './reference-data.js?v=13.0.2';
 const src=topic=>learningResources.filter(r=>r.topics.includes(topic)&&r.type!=='video').slice(0,3).map(r=>({title:r.title,url:r.url}));
 const make=(id,topic,title,input,prompt,sampleOutput,walkthrough,acceptance,extra={})=>({id,topic,title,input,prompt,sampleOutput,walkthrough,acceptance,basis:'课程编辑的原创练习，方法参考对应官方指南。',sources:src(topic),executionStatus:'示范内容由课程编辑编写；所用工具的生成、导出与账号条件需你实际运行验收。',...extra});
 const originalPracticeCases=[...officeCases,...videoCases,
