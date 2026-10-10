@@ -140,3 +140,6 @@ export const groupInlineReferences = {
   optional: refs(['ref-34', 'ref-35', 'ref-project-anthropic-skills'], ['ref-46', 'ref-47']),
   mastery: refs(['ref-24', 'ref-27', 'ref-29', 'ref-30'])
 };
+
+lessonInlineReferences['kimi-code-cli-start']={resourceIds:[],videoIds:[]};
+lessonInlineReferences['codex-app-start']={resourceIds:[],videoIds:[]};

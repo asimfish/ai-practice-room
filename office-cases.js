@@ -82,7 +82,7 @@ export const officeCases = [
       "expectedArtifact": "<活动项目>/exports/<项目名>_<时间戳>.pptx；以 Agent 报告的实际路径为准。"
     },
     "walkthrough": [
-      "先按当前原项目中文安装指南准备 Python 3.10+、依赖和已鉴权 Agent host；本研究未执行这些操作。",
+      "先按当前原项目中文安装指南准备 Python 3.10+、依赖和已鉴权 Agent host；本站本次未执行这些操作。",
       "在可写工作目录启动 Agent，提供上面的内容简报，避免把安装缓存当工作目录。",
       "让 Agent 交付文件和完整路径；快速模式不要求有 svg_final 预览目录。",
       "用 PowerPoint 打开 PPTX，选中第二页文字，修改中文解释，保存副本。",

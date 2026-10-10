@@ -1,3 +1,4 @@
+import {toolStartLessons} from './tool-start-v12.js';
 import {dramaCoreLessons} from './drama-core-v8.js';
 import {generationLessons,generationTools} from './drama-generation-v8.js';
 import {releaseLessons} from './drama-release-v8.js';
@@ -9,7 +10,7 @@ import {advancedLessons,toolEntries,templateEntries} from './advanced.js';
 import {deepGroups,deepLessons,featureMap} from './deep-learning.js';
 import {workflowLessons} from './workflow-courses.js';
 import {anygentGroup,anygentLessons,anygentInvite} from './anygent.js';
-export const version = '11.0 · 2026-10-09';
+export const version = '12.0 · 2026-10-10';
 export {featureMap};
 export {anygentInvite};
 export const groups = [
@@ -113,15 +114,26 @@ for(const l of allDramaLessons){templates.push({title:l.prompts[0].title,categor
 tools.push(...generationTools);
 Object.assign(groups.find(g=>g.id==='video'),{title:'AI视频与短剧：从首作到三集系列',desc:'从剪辑起步到原创剧情、角色场景、动态生成、声音返工、三集迁移与抖音适用发布。',tag:'独立制作专题'});
 lessons.sort((a,b)=>order.indexOf(a.group)-order.indexOf(b.group));
-for(const g of groups){const minutes=lessons.filter(l=>l.group===g.id).reduce((sum,l)=>sum+l.time,0);g.time='阅读与小样约 '+(Math.ceil(minutes/30)/2)+' 小时';}
-glossary.push(['剪辑段与生成请求','剪辑段是最终时间线上的安排，可以由主镜、反应和插镜组合；模型一次支持的秒数与费用需当前界面核对。'],['角色与场景Bible','冻结人物外观、关系、声音、站位、道具和已发生事件的规则表。实际图和视频仍需逐镜检查。'],['审片与上线','审片检查故事与音画；上线另需适用手续、平台审核、声明和真实可播放作品证据，不能互相替代。']);
+for(const g of groups){const minutes=lessons.filter(l=>l.group===g.id).reduce((sum,l)=>sum+l.time,0);g.time='阅读与首次练习约 '+(Math.ceil(minutes/30)/2)+' 小时';}
+glossary.push(['剪辑段与生成请求','剪辑段是最终时间线上的安排，可以由主镜、反应和插镜组合；模型一次支持的秒数与费用需当前界面核对。'],['角色与场景设定表','写清需要保持一致的人物外观、关系、声音、站位、道具和已发生事件的规则表。实际图和视频仍需逐镜检查。'],['审片与上线','审片检查故事与音画；上线另需适用手续、平台审核、声明和真实可播放作品证据，不能互相替代。']);
 
 // Current UI observations from cropped captures and the official demo.
 const anygentWorkbenchVisualUpdate=lessons.find(l=>l.id==='anygent-workbench');
 anygentWorkbenchVisualUpdate.steps[0][1]='打开官方使用工作台教程，按“开始工作台实操”进入。先搜索完整的“演示：给服务加 /health 接口”，只用demo-workstation/whalent-quickstart；界面也会列真实机器，不要选其它机器。练拖对话、File/Terminal和分栏。四项绿只验UI动作，本次演示File读取报错，不能当真文件可用或本机接入已通过。';
 anygentWorkbenchVisualUpdate.steps[1][1]='顶栏“工作台”的下拉或双击入口中选择“管理工作台”。当前管理列表底部有“新工作台名称”和“创建”栏；先填自己的“英语备课练习”，核对账号条件后创建。截图停在提交前；多工作台权益按本人账号确认。';
 anygentWorkbenchVisualUpdate.steps[2][1]+=' 分清目录和具体对话整行：本次界面拖目录打开的是终端，拖具体对话才打开Chat。用面板的来源、机器和路径核对，不因同名就认为同一对象。';
-anygentWorkbenchVisualUpdate.troubles.push(['演示File出现身份/目录读取失败','记为未读取，不把4/4动作勾选当文件成功。核对是否是指定演示机与工作区；仍失败就回原教程说明，结构练习与真实文件验证分开。在自己练习目录另做只读小样，不对真实机器盲目重试。']);
+anygentWorkbenchVisualUpdate.troubles.push(['演示File出现身份/目录读取失败','记为未读取，不把4/4动作勾选当文件成功。核对是否是指定演示机与工作区；仍失败就回原教程说明，结构练习与真实文件验证分开。在自己的练习目录做一次只读取材料的测试，不对真实机器盲目重试。']);
 const anygentMobileVisualUpdate=lessons.find(l=>l.id==='anygent-mobile');
 anygentMobileVisualUpdate.steps[2][1]+=' 小屏多栏太窄时，可从对应面板标签菜单“放大浏览”聚焦同一会话。本站图是433px桌面窄屏参考，真正手机仍需本人核对。';
 anygentMobileVisualUpdate.steps[3][1]+=' 出现审批时先读将执行的命令、目标目录与影响；图中“批准本会话”涉及更广范围，不为省事默认选择。未知就询问并保持未执行，样例声称测试通过不代替判断。';
+
+// New onboarding lessons retain their own current sources and practice requirements.
+lessons.push(...toolStartLessons);
+for(const l of toolStartLessons)templates.push({title:l.title,category:'explore',desc:l.summary,lesson:l.id,text:l.prompts[0].text});
+groups.find(g=>g.id==='skills').desc='Kimi App／CLI → DeepSeek Harness → Codex → 配置、调用与复用 Skill；WorkBuddy、Claude Code 选修。';
+groups.find(g=>g.id==='skills').kind='主线';
+groups.find(g=>g.id==='skills').tag='工具入门';
+
+for(const l of toolStartLessons)l.sourcesReviewed='2026-10-10';
+tools.push({title:'Kimi Code CLI',symbol:'K',type:'电脑端命令行工具',desc:'在练习目录读取材料、生成文件，并按当前 Kimi Code 说明发现与调用 Skill。',use:'先用同一份活动材料完成一个可检查的文件任务',limit:'Windows 按当前官方说明准备 Git for Windows / Git Bash；安装、会员权益和开放平台 API 费用分别核对。',url:'https://www.kimi.com/code/docs/en/kimi-code-cli/guides/getting-started',lesson:'kimi-code-cli-start'});
+tools.push({title:'Codex 桌面入口',symbol:'C',type:'电脑端任务与工作区',desc:'按当前官方桌面入口进入 Codex，选择自己的练习目录，明确调用 Skill 并检查真实输出文件。',use:'本地文件任务、Skill 练习与作品修改',limit:'当前下载产品与菜单名称以官方 Quickstart 为准；普通聊天和 Codex 工作区的能力与账号条件分别核对。',url:'https://learn.chatgpt.com/docs/quickstart',lesson:'codex-app-start'});

@@ -2,7 +2,7 @@ const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&
 export const projectTours=[
  {name:'OpenAI Plugins',url:'https://github.com/openai/plugins',for:'在Codex中发现工具和配套工作方法',read:'先看README，再读一个plugins/目录中的清单与skills。',task:'说清这个包提供哪些工具，哪些步骤由Skill指导；在当前宿主核对可安装性。',limit:'示例插件可能含MCP、账户连接、命令和其他文件。不能把整个插件计数当作Skill计数。'},
  {name:'Anthropic Skills',url:'https://github.com/anthropics/skills',for:'学习办公技能怎样组织输入、脚本和验收',read:'先看README许可，再选一个docx/pdf/pptx/xlsx目录读SKILL.md。',task:'只整理一个文件任务的输入、产物、依赖和检查规则，再与当前工具比较。',limit:'文档技能目录为source-available，许可与其他目录不同；Claude的执行环境不等于你自己的电脑。'},
- {name:'PPT Master',url:'https://github.com/hugohe3/ppt-master',for:'原生PPT编辑、模板与新建演示的选路',read:'从原项目中文起步文档进入，再选模板或原生PPT编辑流程。',task:'先写需求简报，做三页小样并打开检查，再考虑全稿。',limit:'你的输入是PPTX、图片模板还是文字稿，会影响工作流；按对应原教程选。'},
+ {name:'PPT Master',url:'https://github.com/hugohe3/ppt-master',for:'原生PPT编辑、模板与新建演示的选路',read:'从原项目中文起步文档进入，再选模板或原生PPT编辑流程。',task:'先写需求简报，做三页测试稿并打开检查，再考虑全稿。',limit:'你的输入是PPTX、图片模板还是文字稿，会影响工作流；按对应原教程选。'},
  {name:'Vercel Skills CLI',url:'https://github.com/vercel-labs/skills',for:'了解发现、列出、选择和管理单项Skill',read:'阅读README的list、scope、agent和compatibility说明。',task:'先列出候选、核对目标宿主，只选一项在练习目录验证。',limit:'管理工具需要Node；跨宿主的工具调用、hooks等能力可能不同，不要无条件安装整库。'},
  {name:'Hugging Face Skills',url:'https://github.com/huggingface/skills',for:'后续选修：模型、数据与本地模型工作流',read:'从README的Available skills选一个任务，再读具体SKILL.md。',task:'只做任务和依赖阅读卡，说明是否涉及账户、GPU或付费服务。',limit:'这是模型与数据领域进阶库。先完成办公实战，再按自己的实际需求探索。'}
 ];

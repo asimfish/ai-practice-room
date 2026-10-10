@@ -5,7 +5,7 @@ export const communitySources=[
  {name:'Vercel Agent Skills',type:'原作者技能库',url:'https://github.com/vercel-labs/agent-skills',desc:'以网页与开发为主；writing-guidelines、web-design-guidelines适合教程表达和展示页选修。',tasks:'写作 网页 展示 开发',limit:'先选一项读说明，开发技能需要对应项目环境。'},
  {name:'Superpowers',type:'开发流程选修',url:'https://github.com/obra/superpowers',desc:'学习需求、计划、排错和完成前验证。当前Codex安装入口看原README的Plugins路线。',tasks:'规划 开发 排错 测试',limit:'包含多项流程与Hooks；先在练习项目评估，不把开发方法机械套到所有办公任务。'},
  {name:'VoltAgent Awesome Skills',type:'跨领域链接目录',url:'https://github.com/VoltAgent/awesome-agent-skills',desc:'按办公、视频、社媒与自动化方向寻找项目，继续打开具体条目的原作者仓库。',tasks:'办公 视频 社媒 自动化 聚合',limit:'这是目录，不能把awesome仓库当一个Skill全装；外链能力与费用未逐项验证。'},
- {name:'PPT Master',type:'PPT实践项目',url:'https://github.com/hugohe3/ppt-master',desc:'继续练模板、原生编辑、图表、动画与旁白，先做3页小样并改一个文字元素。',tasks:'PPT 模板 图表 动画 配音',limit:'跨Agent安装获取文件后仍需Python与requirements依赖；Codex组合需自己验收。'}
+ {name:'PPT Master',type:'PPT实践项目',url:'https://github.com/hugohe3/ppt-master',desc:'继续练模板、原生编辑、图表、动画与旁白，先做3页测试稿并改一个文字元素。',tasks:'PPT 模板 图表 动画 配音',limit:'跨Agent安装获取文件后仍需Python与requirements依赖；Codex组合需自己验收。'}
 ];
 const O='https://learn.chatgpt.com/docs/build-skills',P='https://developers.openai.com/plugins/build/plugins';
 const make=(id,title,summary,steps,text,practice,sources)=>({id,group:'explore',title,summary,goal:practice,intro:summary+' 从自己的需求出发，每次只验证一项，保留输入、输出、费用与不适用边界。',steps,prompts:[{title:'探索与核对任务',text}],practice,checks:['我能说明原来源、类别与适用工具。','我先核对依赖、权限和范围，再做小测试。','我留下实际结果和下一条要改的规则。'],troubles:[['名称可见但用不了','分别检查端、目录、模型、依赖与工具权限，缺少什么就报告什么。'],['教程或命令变了','回当前原README和官方文档核对，保留旧版，不用过时路径反复试错。']],sources,time:25,device:'电脑执行；手机可浏览目录',level:'独立探索'});
@@ -23,9 +23,9 @@ export const catalogLessons=[
  ['确定端与执行电脑','Anygent手机连接的是某台电脑上的Codex，文件与安装要在那台电脑核对，不能把手机浏览目录当安装。'],['插件按当前入口安装','官方插件或Superpowers看Plugins入口；CLI可按官方文档添加marketplace，再查看和选择具体插件。'],['纯Skill单项安装','在支持的Codex对话中用$skill-installer并给明确名称/源路径。它是对话调用方式，不是普通shell命令。'],['核对可见与实际执行','当前本地发现位置按.agents/skills等官方说明；必要时新建会话或重启。显式调用后打开实际成果检查。']
  ],'我使用[Codex端]，执行电脑与练习目录是[说明]。候选原链接：[链接]。\n请先确定它是插件包还是纯Skill，读取当前官方安装方式、依赖和安装范围。给我一项最小试用计划；确认选择后只处理这一项，不覆盖原有同名技能，不扩大授权。','安装自己选定的一项，记录真实位置与调用方式，再用无隐私材料验收。',[['本地技能与安装',O],['插件marketplace',P],['Superpowers当前安装','https://github.com/obra/superpowers']]),
  make('skill-cross-agent','跨工具安装：Codex、Harness与WorkBuddy分别核对','通用SKILL.md不保证脚本、工具名和资源路径都兼容。',[
- ['先列候选，不装全库','Vercel CLI的--list可列仓库技能，但npx本身会下载执行工具，需要确认来源与Node环境。'],['只选一项和一个目标','在练习项目用--skill与-a codex定向选择，保留交互；项目/用户范围分清。'],['核对宿主与依赖','Claude插件命令不能照搬。Harness、WorkBuddy的导入入口、目录和Python/API条件分别查原文。'],['做真实小样','检查发现、执行、文件和内容；跨宿主成功以各自测试为证，失败可停用并恢复。']
+ ['先列候选，不装全库','Vercel CLI的--list可列仓库技能，但npx本身会下载执行工具，需要确认来源与Node环境。'],['只选一项和一个目标','在练习项目用--skill与-a codex定向选择，保留交互；项目/用户范围分清。'],['核对宿主与依赖','Claude插件命令不能照搬。Harness、WorkBuddy的导入入口、目录和Python/API条件分别查原文。'],['做真实小范围试做','检查发现、执行、文件和内容；跨宿主成功以各自测试为证，失败可停用并恢复。']
  ],'候选Skill：[原链接]；目标宿主：[Codex/Harness/WorkBuddy]。\n请比较格式、资源、命令、工具名、依赖、权限和费用。先列缺项与正确安装位置，不把另一宿主的说明直接搬过来。只在练习目录测试一项，报告已检查与未运行的内容。','让同一候选在一个目标宿主做小试验，写出兼容与不兼容之处。',[['Vercel安装管理工具','https://github.com/vercel-labs/skills'],['Anthropic库与许可','https://github.com/anthropics/skills'],['Harness目录','https://github.com/deepseek-ai/deepseek-harness']],),
  make('skill-personal-kit','选自己的三项工具包：教案、PPT或视频','把发现的能力变成少量有证据、可复用的个人方法。',[
- ['只选一个领域','教案可看文档协作和检查，PPT可看PPT Master与设计，视频先选脚本或本地制作阶段。'],['各选一项职责','资料整理、作品制作、交付检查分清输入输出；连接器和发布动作单独确认。'],['换材料做三次','第一次小样，第二次新材料，第三次加缺项；保留成本和失败处理。'],['建立个人档案','记录源链接、版本/日期、范围、依赖、许可、通过样例、失效边界和保留原因。']
+ ['只选一个领域','教案可看文档协作和检查，PPT可看PPT Master与设计，视频先选脚本或本地制作阶段。'],['各选一项职责','资料整理、作品制作、交付检查分清输入输出；连接器和发布动作单独确认。'],['换材料做三次','第一次小范围试做，第二次新材料，第三次加缺项；保留成本和失败处理。'],['建立个人档案','记录源链接、版本/日期、范围、依赖、许可、通过样例、失效边界和保留原因。']
  ],'我的领域：[教学/PPT/视频/日报]；目标：[真实任务]。\n请从已核对原来源的候选中建议最多3项，说明每项职责与交接文件。提供正常、缺信息、易错三份测试；记录实际费用与未验证项，不把写作Skill当成拥有飞书读取或发群权限。','整理一套最多三项的个人工具包，用不同材料留下三份作品与探索记录。',[['文档协作示例','https://github.com/anthropics/skills'],['PPT实践项目','https://github.com/hugohe3/ppt-master'],['Vercel技能库','https://github.com/vercel-labs/agent-skills']])
 ];
