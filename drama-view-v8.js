@@ -1,6 +1,6 @@
-import {dramaAssets,dramaPathIds} from './drama-core-v8.js?v=13.0.2';
-import {dramaProject} from './drama-cases-v8.js?v=13.0.2';
-import {publishGate} from './drama-release-v8.js?v=13.0.2';
+import {dramaAssets,dramaPathIds} from './drama-core-v8.js?v=14.0.0';
+import {dramaProject} from './drama-cases-v8.js?v=14.0.0';
+import {publishGate} from './drama-release-v8.js?v=14.0.0';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const download=(file,label)=>`<a class="button outline" href="./materials/${encodeURIComponent(file)}" download>${esc(label)}</a>`;
 export function dramaGroupEntry(){return `<section class="panel drama-entry"><span class="pill">目标：独立AI短剧＋抖音发布</span><h2>从第一集，练到自己的三集系列</h2><p>已有静态视频练习后，继续学习剧情、角色和场景、动态生成、表演与口型、修复、剪辑、终审和真实发布。零基础也能先读剧本、试读和准备材料，再按条件做动态测试片段。</p><div class="complete-actions"><a class="button" href="#/drama">进入AI短剧制作课</a><button type="button" class="button outline" data-journey="drama">将AI短剧设为我的路径</button><a href="#/checkpoint/drama">先看短剧成果标准</a></div><p class="inline-note">静态图配音可预演；制作毕业要求实际AI动态叙事。发布条件需另核，缺手续保留待确认。</p></section>`;}

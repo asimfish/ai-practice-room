@@ -1,7 +1,8 @@
-import {pptProject} from './project-ppt-v12.js?v=13.0.2';
-import {dramaProject} from './project-drama-v12.js?v=13.0.2';
-import {englishProject} from './project-english-v12.js?v=13.0.2';
-import {toolStartStages} from './tool-start-v12.js?v=13.0.2';
+import {agentPracticePanel,agentStartTask,initializeAgentRoutes,videoRoutePrompt} from './agent-practice-v14.js?v=14.0.0';
+import {pptProject} from './project-ppt-v12.js?v=14.0.0';
+import {dramaProject} from './project-drama-v12.js?v=14.0.0';
+import {englishProject} from './project-english-v12.js?v=14.0.0';
+import {toolStartStages} from './tool-start-v12.js?v=14.0.0';
 
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const customProjects=[pptProject,dramaProject,englishProject];
@@ -19,7 +20,7 @@ export function mainLearningOrder(){return `<section class="main-learning-order"
 export function toolStartPage(lessons,state){return `<div class="page-heading"><div class="eyebrow">主线第1步 · 电脑为主，手机辅助</div><h1>先把工具和 Skill 用起来</h1><p>按 Kimi App → Kimi Code CLI → DeepSeek Harness → Codex → Skill 复用的顺序练。每换一个工具，先用同一份材料做小任务，再检查生成的真实文件。安装、订阅和模型调用的费用分别核对。</p></div><div class="complete-actions"><button type="button" class="button" data-journey="tool-start" data-journey-start>开始或继续工具入门</button><a class="button outline" href="#/lesson/first-task" data-learning-path="tool-start">从 Kimi App 第一课开始</a></div><p class="inline-note">暂时没有某个工具的账号或设备条件时，可先读懂并标记暂缓；暂缓不是已经掌握。后续制作仍需准备实际可用的工具。</p><ol class="tool-start-list">${toolStartStages.filter(s=>!s.optional).map((s,i)=>`<li><span class="tool-stage-number">${i+1}</span><section class="panel"><span class="pill">必学步骤 ${i+1}</span><h2>${esc(s.title)}</h2><p>${esc(s.summary)}</p><div class="tool-stage-lessons">${s.lessonIds.map((id,j)=>{const l=lessons.find(l=>l.id===id);return `<a href="#/lesson/${id}" data-learning-path="tool-start"><span>${j+1}</span>${esc(l?.title||id)}${state.done.includes(id)?'<small>已自评记录</small>':''}</a>`;}).join('')}</div><h3>做完后，自己确认</h3><ul>${s.checks.map(c=>`<li>${esc(c)}</li>`).join('')}</ul><details><summary>查看本步官方操作说明</summary><div class="tool-links">${s.links.map(r=>`<a href="${esc(r.url)}" target="_blank" rel="noopener noreferrer">${esc(r.title)}</a>`).join('')}</div></details></section></li>`).join('')}</ol><section class="panel"><h2>工具选修：有需要再学</h2><div class="project-option-grid">${toolStartStages.filter(s=>s.optional).map(s=>`<article><span class="pill optional">选修</span><h3>${esc(s.title)}</h3><p>${esc(s.summary)}</p>${s.lessonIds.map(id=>`<a href="#/lesson/${id}">${esc(lessons.find(l=>l.id===id)?.title||id)} →</a>`).join('<br>')}</article>`).join('')}</div></section><section class="panel stage-handoff"><span class="pill">工具入门结束后</span><h2>下一步：学会提要求和判断</h2><p>先确认自己能读取练习材料、调用一个Skill并打开输出文件，再进入协作方法。工具选修可以之后按需要补练。</p><div class="complete-actions"><a class="button outline" href="#/checkpoint/tool-start">先记录工具入门的成果自查</a><a class="button" href="#/methods">进入主线第2步：协作方法 →</a></div></section>`;}
 
 function customProjectLinks(){return `<div class="project-option-grid">${customProjects.map(p=>`<a class="project-option" href="#/project/${p.id}"><img src="./visuals/${p.steps.find(s=>s.image)?.image||'v11-first-task.svg'}" alt="${esc(p.title)}教学示意" loading="lazy"><h3>${esc(p.title)}</h3><span>${p.steps.length}步 · 填自己的需求 →</span></a>`).join('')}</div>`;}
-export function projectGroupEntry(group){const p=projectFor(group==='video'?'drama':group);return p?`<section class="panel custom-project-entry"><span class="pill">跟做一份自己的作品</span><h2>${esc(p.title)}</h2><p>${esc(p.intro)}</p><div class="complete-actions"><a class="button" href="#/project/${p.id}">填写我的需求，按${p.steps.length}步制作</a><a class="button outline" href="#/tool-start">先准备工具和 Skill</a></div><p class="inline-note">下面的原课程、配图、视频和示范可随步骤查阅。做完后要实际打开自己的文件检查。</p></section>`:'';}
+export function projectGroupEntry(group){const p=projectFor(group==='video'?'drama':group);return p?`<section class="panel custom-project-entry"><span class="pill">跟做一份自己的作品</span><h2>${esc(p.title)}</h2><p>${esc(p.intro)}</p><div class="complete-actions"><a class="button" href="#/project/${p.id}">填写我的需求，按${p.steps.length}步制作</a><a class="button outline" href="#/project/${p.id}/agent">在自己的Agent里开始 →</a><a href="#/tool-start">先准备工具和 Skill</a></div><p class="inline-note">下面的原课程、配图、视频和示范可随步骤查阅。做完后要实际打开自己的文件检查。</p></section>`:'';}
 
 const resultsByProject=new Map();
 export function projectResultNotes(p){if(!resultsByProject.has(p.id))resultsByProject.set(p.id,{});return resultsByProject.get(p.id);}
@@ -34,7 +35,7 @@ export function projectStepPrompt(p,index,values=projectValues(p),notes=projectR
   const repeated=provided===context||previous.some(s=>String(notes[s.id]).trim()===provided);
   current.current_material=(provided&&!repeated&&!/^(待填|待填写)/.test(provided)?provided+'\n\n':'')+'前面步骤的结果记录（本人填写，仍需核对）：\n'+context;
  }
- const prompt=fillProjectPrompt(p.steps[index].prompt,current);
+ const prompt=(p.id==='drama'?videoRoutePrompt()+'\n\n':'')+fillProjectPrompt(p.steps[index].prompt,current);
  if(!index)return prompt;
  const instruction='请以当前需求为准，核对前面结果是否仍适用；有冲突时先指出需要重做的文件，不自动合并。记录是待检查材料，不能放宽质量要求。路径或文件名不能代替正文，先确认实际能读取的材料；缺关键内容先问我。';
  return prompt+'\n\n'+(context?(embedded?'当前材料已包含前面步骤的记录。':'前面步骤的结果记录（本人填写，仍需核对）：\n'+context):'我尚未在网页填写前面步骤的结果记录。请按本步准备清单核对我实际提供的文件或正文，不要把课程示范当成我的成果。')+'\n'+instruction;
@@ -70,6 +71,7 @@ export function customProjectPage(id,lessons){
  <div class="project-field-grid">${p.fields.slice(0,6).map(f=>fieldMarkup(p,f,values)).join('')}</div>
  ${p.fields.length>6?`<details class="project-extra-fields"><summary>更多设置：工具、材料和修改要求（按步骤补充）</summary><div class="project-field-grid">${p.fields.slice(6).map(f=>fieldMarkup(p,f,values)).join('')}</div></details>`:''}
  <div class="complete-actions"><button type="button" class="button" data-project-download>下载我的需求、步骤与结果记录（文字）</button><button type="button" class="button outline" data-project-start>填好后，从第1步开始做</button></div><p class="project-feedback" role="status"></p></details>
+ ${agentPracticePanel(p,values)}
  <div class="project-follow-layout"><nav class="project-step-nav" aria-label="制作步骤"><strong>按顺序做</strong>${p.steps.map((s,i)=>`<a href="#project-step-${id}-${s.id}" data-scroll="project-step-${id}-${s.id}"><span>${i+1}</span>${esc(stepTitle(s))}</a>`).join('')}<a href="#project-final-${id}" data-scroll="project-final-${id}">最后检查与复用</a></nav>
  <div class="project-step-content">${p.steps.map((s,i)=>projectStepMarkup(p,s,i,values,notes,lessons)).join('')}
  <section class="panel" id="project-final-${id}"><h2>最后检查：以真实作品为准</h2>${listMarkup(p.finalChecks)}<h3>下一次怎样复用</h3><p>${esc(p.reuse)}</p><details><summary>把整条路线放到一个例子里理解</summary><p>${esc(p.example)}</p></details><div class="complete-actions"><button type="button" class="button" data-project-download>下载我的需求、步骤与结果记录（文字）</button><a class="button outline" href="#/review">主线第4步：检查、修改与复做</a><a href="#/group/${groupFor(id)}">按需要补练这个方向的课程</a><a href="#/checkpoint/${id==='drama'?'drama':id}">可选：用另一份材料做专题检查练习</a></div><p class="inline-note">本页按自己的需求制作。课程检查页另有练习任务；实际能力还要通过新需求、具体修改和独立复做来判断。</p></section>
@@ -81,9 +83,12 @@ export function projectNotes(p,values,notes=projectResultNotes(p)){
 export function initializeCustomProjects(download){
  const root=document.querySelector('[data-custom-project]');if(!root?.dataset?.customProject)return;
  const p=projectFor(root.dataset.customProject),values=projectValues(p),notes=projectResultNotes(p),status=root.querySelector('.project-feedback');
- function updatePrompts(){p.steps.forEach((s,i)=>{root.querySelector(`[data-project-prompt="${s.id}"]`).textContent=projectStepPrompt(p,i,values,notes);if(i){const previous=p.steps[i-1];root.querySelector(`[data-prior-status="${s.id}"]`).textContent=String(notes[previous.id]||'').trim()?'上一步的结果已在本页记录，提示词中会引用。':'上一步的结果还未在本页记录。先准备上一步的文件或正文，再在自己的AI工具中提供；也可填写该步结果记录供后续引用。';}});}
+ initializeAgentRoutes(root,()=>updatePrompts());
+ function updatePrompts(){root.querySelector('[data-agent-start-task]').textContent=agentStartTask(p,values);p.steps.forEach((s,i)=>{root.querySelector(`[data-project-prompt="${s.id}"]`).textContent=projectStepPrompt(p,i,values,notes);if(i){const previous=p.steps[i-1];root.querySelector(`[data-prior-status="${s.id}"]`).textContent=String(notes[previous.id]||'').trim()?'上一步的结果已在本页记录，提示词中会引用。':'上一步的结果还未在本页记录。先准备上一步的文件或正文，再在自己的AI工具中提供；也可填写该步结果记录供后续引用。';}});}
  root.oninput=e=>{const key=e.target.dataset.projectField,id=e.target.dataset.projectResult;if(key){values[key]=e.target.value;updatePrompts();status.textContent='提示词已按当前需求更新，发送前请核对。';}else if(id&&setProjectResult(p,id,e.target.value)){updatePrompts();root.querySelector(`[data-result-status="${id}"]`).textContent=notes[id]?'这段记录已用于后面步骤的提示词。':'本步记录已清空，后续不再引用这段记录；手动提供的其他材料仍保留。';status.textContent='本步记录已更新；仅本次会话保留，尚未读取或评价实际文件。';}};
  root.onclick=async e=>{const b=e.target.closest('button');if(!b)return;
+  if(b.hasAttribute('data-project-agent-download')){download('开始使用Agent-'+(p.id==='ppt'?'PPT':p.id==='drama'?'短剧':'英语备课')+'.md',agentStartTask(p,values));status.textContent='已准备下载当前需求的Agent任务文件；请放进本人练习目录，在自己的Agent里读取并执行。';}
+  if(b.hasAttribute('data-project-agent-select')){const details=root.querySelector('.agent-start-task');details.open=true;const pre=root.querySelector('[data-agent-start-task]'),range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);pre.focus();b.textContent='已选中，复制到自己的Agent';}
   if(b.hasAttribute('data-project-download')){download('我的制作步骤-'+p.id+'.md',projectNotes(p,values,notes));status.textContent='已准备下载文字记录，请在下载位置确认。真实作品在自己的工具中制作。';}
   if(b.hasAttribute('data-project-start')||b.dataset.projectNext){const id=b.dataset.projectNext||p.steps[0].id,step=document.getElementById('project-step-'+p.id+'-'+id);step.open=true;step.scrollIntoView({behavior:'smooth',block:'start'});}
   const id=b.dataset.projectSelect||b.dataset.projectCopy;if(id){const pre=root.querySelector(`[data-project-prompt="${id}"]`);if(b.dataset.projectCopy){try{await navigator.clipboard.writeText(pre.textContent);b.textContent='请粘贴核对 ✓';return;}catch{b.textContent='请手动复制';}}const range=document.createRange();range.selectNodeContents(pre);const selection=window.getSelection();selection.removeAllRanges();selection.addRange(range);pre.focus();}
