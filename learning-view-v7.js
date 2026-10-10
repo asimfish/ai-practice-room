@@ -1,4 +1,4 @@
-import {learningPaths,getLearningPath,nextInPath,lessonNavigation,pathProgress,getCheckpoint,validateCheckpoint} from './learning-path-v7.js?v=13.0';
+import {learningPaths,getLearningPath,nextInPath,lessonNavigation,pathProgress,getCheckpoint,validateCheckpoint} from './learning-path-v7.js?v=13.0.1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const lessonBy=(lessons,id)=>lessons.find(l=>l.id===id);
 const selectedCard=(p,state)=>`<article class="path-card ${state.journey===p.id?'selected-path':''}"><span class="pill">${esc(p.kind)}</span><h3>${esc(p.title)}</h3><p>${esc(p.description)}</p><p class="inline-note">${p.lessonIds.length}课 · ${pathProgress(p.id,state.done,state.deferred).completed}课已自评记录</p><button type="button" class="button ${state.journey===p.id?'outline':''}" data-journey="${p.id}">${state.journey===p.id?'继续这条路径':'选择这条路径'}</button></article>`;

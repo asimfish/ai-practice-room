@@ -1,7 +1,7 @@
-import {toolGuides} from './visual-tool-guides-v12.js?v=13.0';
-import {foundationGuides} from './visual-foundation-guides-v11.js?v=13.0';
-import {officeGuides} from './visual-office-guides-v11.js?v=13.0';
-import {videoAutomationGuides} from './visual-video-automation-guides-v11.js?v=13.0';
+import {toolGuides} from './visual-tool-guides-v12.js?v=13.0.1';
+import {foundationGuides} from './visual-foundation-guides-v11.js?v=13.0.1';
+import {officeGuides} from './visual-office-guides-v11.js?v=13.0.1';
+import {videoAutomationGuides} from './visual-video-automation-guides-v11.js?v=13.0.1';
 const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 export const visualGuidesByLesson={...foundationGuides,...officeGuides,...videoAutomationGuides,...toolGuides};
 export const guidePalette={mindset:['#326452','#eaf5ef'],basics:['#244fe3','#edf2ff'],skills:['#6355ba','#f1edff'],chatgpt:['#257962','#e6f5ee'],explore:['#6650ae','#f0edfb'],english:['#34746d','#e8f5f0'],ppt:['#aa5728','#fff1e5'],video:['#784da0','#f4edfc'],workbuddy:['#315e9e','#eaf1fc'],automation:['#397062','#ecf6ef'],anygent:['#255ba1','#eaf2ff'],optional:['#596078','#eff1f6'],mastery:['#785330','#faf1e7']};
