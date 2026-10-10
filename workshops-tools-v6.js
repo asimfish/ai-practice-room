@@ -59,7 +59,7 @@ export const toolsWorkshops = [
       {criterion:'事实与未知项',pass:'只用输入，H03 日期和房间待确认。',fail:'虚构场地、教材页码或学生背景。'},
       {criterion:'文档与编辑',pass:'DOCX真实存在、能打开、可改字，外观检查有记录。',fail:'只有对话文本或文件损坏，却标记完成。'},
       {criterion:'模板与内容',pass:'六节一致，三份时间分别20/25/45分钟，方向和英语正确。',fail:'格式一致但目标、时间或答案错误。'},
-      {criterion:'批量控制',pass:'一份小范围试做通过后处理两份，清单状态逐项记录。',fail:'先全量运行，再用一句“都正常”签收。'}
+      {criterion:'批量控制',pass:'一次小范围测试通过后处理两份，清单状态逐项记录。',fail:'先全量运行，再用一句“都正常”签收。'}
     ],
     acceptance:['H01–H03 与三个真实文件逐项对应。','六节模板完整，时间各自可复算。','未知事实没有被补造。','每份 DOCX 已在自己的 Word/WPS 打开并试改。','清单中已验、未验与失败项准确。','输入原件保留，v2 与返工原因可查。'],
     sources:[S.harness,S.desktop,S.office,S.web],executionStatus:'NOT_RUN：本站仅编写原创输入、预期内容与验收卡；未安装或运行 Harness，未生成本案例的 DOCX。学员需在自己的版本、账号与 Office 软件中验证。',
